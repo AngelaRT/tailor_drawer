@@ -1,0 +1,1 @@
+python photobooth_raspicamera.py > aux_out.txt
