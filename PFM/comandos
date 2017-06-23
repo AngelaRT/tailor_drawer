@@ -1,0 +1,36 @@
+pkill -f ros
+qtcreator-2.8.1 &
+catkin_ws o manager
+
+game_list_session.xml -> juegos
+multimedia de tablet --> dropbox
+maggieuc3m@gmail.com
+roboticslab
+tablet --> 
+
+tipo photo video o music
+
+cd /opt/Loquendo/LTTS7/bin --> sh TTSDirector.sh
+	hola. \pause=1000 qué tal estás?
+
+ejecutables al principio -> manager--main-control- launch - alz_start_basic.launch
+
+alz_game_session.cpp
+
+1280x800
+
+nuevo cpp y .h en cmakelists.txt
+alz_sessions
+
+
+DIALOGOS
+catkin_ws/src/interaction_common/data/
+	grammars --> lo que quiero reconoer por voz
+	recipes --> alz_scenarios
+	init_files --> alz_scenarios --> init_Alz_basic_states --> qué recetas quiero que se lancen
+		triggerables las que no son desde goals
+
+		gestos --> manager/gesture_player/data --> geany nb_gesto
+
+
+		rostopic pub /alz/tablet_player tv_on_demand/multimediaPlayer

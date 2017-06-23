@@ -1,0 +1,86 @@
+#ABNF 1.0 ISO-8859-1;
+
+language es-ES;
+tag-format <loq-semantics/1.0>;
+
+public $root = [$GARBAGE] $user_talking;
+
+$user_talking = ($game_differences | $easy_image1_diff0 | $easy_image1_diff1 | $easy_image1_diff2 | $easy_image2_diff0 | $easy_image2_diff1 | $easy_image1_noDiff | $easy_image2_noDiff | $easy_image3_noDiff | $easy_image3_diff0 | $easy_image3_diff1 | $easy_image3_diff2 | $easy_image3_diff3 | $medium_image1_diff0  | $medium_image1_diff1  | $medium_image1_diff2  | $medium_image1_diff3  | $medium_image1_diff4  | $medium_image1_diff5  | $medium_image1_diff6  | $medium_image1_diff7  | $medium_image1_diff8  | $medium_image1_diff9  | $medium_image1_noDiff  |   $medium_image2_diff0  | $medium_image2_diff1  | $medium_image2_diff2  | $medium_image2_diff3  | $medium_image2_diff4  | $medium_image2_diff5  | $medium_image2_diff6  | $medium_image2_noDiff  |  $medium_image3_diff0  | $medium_image3_diff1  | $medium_image3_diff2  | $medium_image3_diff3  | $medium_image3_diff4  | $medium_image3_noDiff  |   $hard_image1_diff0  | $hard_image1_diff1  | $hard_image1_diff2  | $hard_image1_diff3  | $hard_image1_diff4  | $hard_image1_diff5  | $hard_image1_diff6  | $hard_image1_noDiff  |  $hard_image2_diff0  | $hard_image2_diff1  | $hard_image2_diff2  | $hard_image2_diff3  | $hard_image2_diff4  | $hard_image2_diff5  | $hard_image2_diff6  | $hard_image2_noDiff  |  $hard_image3_diff0  | $hard_image3_diff1  | $hard_image3_diff2  | $hard_image3_diff3  | $hard_image3_diff4  | $hard_image3_diff5  | $hard_image3_diff6  | $hard_image3_noDiff | $easy_level | $medium_level | $hard_level);
+
+$easy_level = ("jugar nivel fácil" | "fácil" | "el" ["más"] "fácil" | "el" ["nivel"] "fácil"){<@game_command "easy_level">};
+
+$medium_level = ("jugar nivel medio" | "medio" | "el medio" | "el" ["nivel"] "medio"){<@game_command "medium_level">};
+
+$hard_level = ("jugar nivel difícil" | "difícil" | "el" ["más"] "difícil" | "el" ["nivel"] "difícil"){<@game_command "hard_level">};
+
+$game_differences = ("juego nuevo" | "juego de las diferencias" | "el de las diferencias" | "encontrar las diferencias" | "buscar diferencias"){<@game_command "game_differences">};
+
+$easy_image1_diff0 = ( "la ventana" | "las ventanas" | "la [ventana] de la izquierda" | "la [ventana] de la derecha" | "las rejas [de la ventana]" | "la cruz" | "la cruz de la ventana"){<@game_command "easy_image1_diff0">};
+$easy_image1_diff1 = ( "puerta" | "la puerta" | "las puertas" | "las puertas son distintas" | "el color de la puerta" | "la puerta amarilla" | "la puerta marrón" | "la puerta azul"){<@game_command "easy_image1_diff1">};
+$easy_image1_diff2 = ( "tejado" | "el tejado" | "los tejados" | "los tejados son distintos" | "el color del tejado" | "el tejado rosa" | "el tejado azul"){<@game_command "easy_image1_diff2">};
+$easy_image1_noDiff = ("la chimenea" | "las flores" | "las plantas" | "los arbustos"){<@game_command "easy_image1_noDiff">};
+
+$easy_image2_diff0 = ( "la rama" | "la rama del árbol" | "las ramas" | "el árbol" | "los árboles"){<@game_command "easy_image2_diff0">};
+$easy_image2_diff1 = ( "mariposas" | "las mariposas" | "hay más mariposas [a la izquierda]" | "hay menos mariposas [a la derecha]" | "polillas" | "las polillas" | "moscas" | "las moscas" | "hay más moscas [a la izquierda]" | "hay menos moscas [a la derecha]"){<@game_command "easy_image2_diff1">};
+$easy_image2_noDiff = ("el banco" | "las farolas" | "las flores" | "la hierba" | "las plantas" | "los edificios" | "las casas" | "los bloques" | "el arbusto"){<@game_command "easy_image2_noDiff">};
+
+$easy_image3_diff0 = ( "la garrota" | "el bastón" | "[el bastón] está al revés" | "[la garrota] está al revés"){<@game_command "easy_image3_diff0">};
+$easy_image3_diff1 = ( "las gafas" | "no lleva gafas" | "los anteojos" ){<@game_command "easy_image3_diff1">};
+$easy_image3_diff2 = ( "el jersey" | "los rombos" | "los cuadros" | "las rayas" | "la chaqueta" | "la ropa"){<@game_command "easy_image3_diff2">};
+$easy_image3_diff3 = ("el pelo" | "el tupé" | "la calva"){<@game_command "easy_image3_diff3">};
+$easy_image3_noDiff = ("el periódico" | "la mano" | "la nariz"){<@game_command "easy_image3_noDiff">};
+
+$medium_image1_diff0 = ("los tiradores" | "el armario" | "las puertas" | "los corazones"){<@game_command "medium_image1_diff0">};
+$medium_image1_diff1 = ("las flores" | "la planta" | "las rosas" | "los claveles" | "a la derecha" | "el cacharro de abajo"){<@game_command "medium_image1_diff1">};
+$medium_image1_diff2 = ("las galletas" | "la bandeja del horno" | "los bollos" | "la galleta" | "el bollo" | "las pastas"){<@game_command "medium_image1_diff2">};
+$medium_image1_diff3 = ("el moño" | "la abuela" | "el moño de la abuela" | "la horquilla" | "el pincho"){<@game_command "medium_image1_diff3">};
+$medium_image1_diff4 = ("el pie" | "el calcetín"| "la media" | "el zapato" | "la zapatilla" | "descalza" | "la niña está descalza"){<@game_command "medium_image1_diff4">};
+$medium_image1_diff5 = ("la cuchara" | "la piruleta" | "el caramelo" | "el pirulí" | "el gato" | "el caramelo del gato" | "el chupachus" | "la cuchara del gato" | "el perro"){<@game_command "medium_image1_diff5">};
+$medium_image1_diff6 = ("la lengua" | "la boca" | "la boca de la niña" | "la cara" | "la cara de la niña" | "la lengua de la nieta"){<@game_command "medium_image1_diff6">};
+$medium_image1_diff7 = ("el reloj" | "la hora" | "menos cuarto" | "y media" | "las agujas del reloj" | "el minutero"){<@game_command "medium_image1_diff7">};
+$medium_image1_diff8 = ("los cacharros del fondo" | "los muñecos" | "el cuenco" | "la fuente"){<@game_command "medium_image1_diff8">};
+$medium_image1_diff9 = ("el cuadro" | "la foto" | "el dibujo" | "la fotografía" | "las montañas" | "los montes"){<@game_command "medium_image1_diff9">};
+$medium_image1_noDiff = ("la cortina" | "las fresas" | "las manzanas" | "los plátanos" | "la olla" | "los cubiertos" | "la tarta" | "el pastel"){<@game_command "medium_image1_noDiff">};
+
+$medium_image2_diff0 = ("el sol" | "el cielo" | "la luna"){<@game_command "medium_image2_diff0">};
+$medium_image2_diff1 = ("el crucifijo" | "el rosario" | "la monja"){<@game_command "medium_image2_diff1">};
+$medium_image2_diff2 = ("las piedras" | "las piedras grandes" | "los pedrolos" | "los pedruscos"){<@game_command "medium_image2_diff2">};
+$medium_image2_diff3 = ("el fajín" | "el cinturón" | "el color de la cinta"){<@game_command "medium_image2_diff3">};
+$medium_image2_diff4 = ("el camino" | "no hay camino" | "el sendero"){<@game_command "medium_image2_diff4">};
+$medium_image2_diff5 = ("las casas" | "el pueblo"){<@game_command "medium_image2_diff5">};
+$medium_image2_diff6 = ("el mechón [de pelo] de la niña" | "el flequillo"){<@game_command "medium_image2_diff6">};
+$medium_image2_noDiff = ("la iglesia" | "la trenza"){<@game_command "medium_image2_noDiff">};
+
+$medium_image3_diff0 = ("la mariquita" | "el bicho"){<@game_command "medium_image3_diff0">};
+$medium_image3_diff1 = ("la hiena" | "las manchas de la hiena" | "la mancha" | "el lunar" | "los lunares"){<@game_command "medium_image3_diff1">};
+$medium_image3_diff2 = ("la cebra" | "la raya de la cebra" | "la cara de la cebra"){<@game_command "medium_image3_diff2">};
+$medium_image3_diff3 = ("el toro" | "el rabo del toro" | "el buey" | "la cola"){<@game_command "medium_image3_diff3">};
+$medium_image3_diff4 = ("el jabalí" | "el cuerno del jabalí" | "el cochino" | "el colmillo"){<@game_command "medium_image3_diff4">};
+$medium_image3_noDiff = ("el leopardo" | "el tigre" | "el rinoceronte" | "el ciervo" | "el antílope"){<@game_command "medium_image3_noDiff">};
+
+$hard_image1_diff0 = ("la nube" | "el cielo" | "las nubes"){<@game_command "hard_image1_diff0">};
+$hard_image1_diff1 = ("la rana" | "el sapo" | "la lengua del sapo" | "la lengua de la rana"){<@game_command "hard_image1_diff1">};
+$hard_image1_diff2 = ("las ovejas" | "la oveja" | "el borrego" | "los corderos"){<@game_command "hard_image1_diff2">};
+$hard_image1_diff3 = ("el pez" | "el río" | "el pescado"){<@game_command "hard_image1_diff3">};
+$hard_image1_diff4 = ("la roca" | "el musgo" | "las rocas"){<@game_command "hard_image1_diff4">};
+$hard_image1_diff5 = ("la flor" | "la margarita" | "las margaritas"){<@game_command "hard_image1_diff5">};
+$hard_image1_diff6 = ("el humo" | "el color del humo"){<@game_command "hard_image1_diff6">};
+$hard_image1_noDiff = ("la madre" | "los pies" | "las bocas"){<@game_command "hard_image1_noDiff">};
+
+$hard_image2_diff0 = ("el gorro" | "el sombrero" | "el gorro del perro"){<@game_command "hard_image2_diff0">};
+$hard_image2_diff1 = ("el bikini" | "el bañador" | "la patita" | "el sujetador" | "el sostén"){<@game_command "hard_image2_diff1">};
+$hard_image2_diff2 = ("el remo" | "el remo del cerdo" | "la pala" | "el palo"){<@game_command "hard_image2_diff2">};
+$hard_image2_diff3 = ("el ojo" | "la mirada" | "el pájaro"){<@game_command "hard_image2_diff3">};
+$hard_image2_diff4 = ("la palmera" | "la isla" | "el oasis" ){<@game_command "hard_image2_diff4">};
+$hard_image2_diff5 = ("las orejas" | "las orejas del cerdo" | "las orejas del guarro"){<@game_command "hard_image2_diff5">};
+$hard_image2_diff6 = ("el diente" | "los dientes" | "la boca del perro"){<@game_command "hard_image2_diff6">};
+$hard_image2_noDiff = ("la barca" | "la lancha" | "el pulpo"){<@game_command "hard_image2_noDiff">};
+
+$hard_image3_diff0 = ("el viento" | "el movimiento de la hoja" | "la hoja"){<@game_command "hard_image3_diff0">};
+$hard_image3_diff1 = ("el pelo del lobo" | "el mechón del zorro" | "el pelo del mayor" ){<@game_command "hard_image3_diff1">};
+$hard_image3_diff2 = ("la sombra" | "la sombra del lobo" | "la sombra en la montaña"){<@game_command "hard_image3_diff2">};
+$hard_image3_diff3 = ("el pecho" | "el lobezno" | "el pelo del pecho" | "el pelo del menor"){<@game_command "hard_image3_diff3">};
+$hard_image3_diff4 = ("la cola del mayor" | "el pelo de la cola del lobo" ){<@game_command "hard_image3_diff4">};
+$hard_image3_diff5 = ("la oreja" | "la oreja del pequeño" | "la oreja del gato"){<@game_command "hard_image3_diff5">};
+$hard_image3_diff6 = ("la cara del lobo" | "el pelo de la cara" | "la cara del perro"){<@game_command "hard_image3_diff6">};
+$hard_image3_noDiff = ("el césped" | "la hierba"){<@game_command "hard_image3_noDiff">};

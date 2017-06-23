@@ -1,0 +1,67 @@
+#ABNF 1.0 ISO-8859-1;
+
+language es-ES;
+tag-format <loq-semantics/1.0>;
+
+public $root = [$GARBAGE] $user_talking;
+
+$user_talking = ($memory_game | $hello | $goodbye | $pause | $resume | $previous | $next | $stop | $end_game_session |
+$one | $two | $three | $four | $five | $six | $seven | $eight | $nine | $ten | $eleven | $twelve | 
+$easy_level | $medium_level | $hard_level | $init_game | $get_hint);
+
+// #### GENERAL --> IGUAL QUE EN alz_game_session.gram ####
+
+$hello = ("saluda" | "di hola"){<@game_option "hello">};
+
+$goodbye = ("tenemos que irnos" | "deberias descansar" ["un poco"] | "estaras cansada" | "debes de estar cansada" | "despidete"){<@game_option "goodbye">};
+
+$pause = ( "haz una pausa" | "para un momento" | "espera un momento" ){<@game_option "pause">};
+
+$resume = ("continua" | "ya puedes continuar" | "ya puedes seguir" ){<@game_option "resume">};
+
+$previous = ("repite lo ultimo" | "puedes repetir"){<@game_option "previous">};
+
+$next = ("pasa al siguiente" ["juego"]){<@game_option "next">};
+
+$stop = ("mini callate" ["un rato"] | "eres una pesada" | "deja de hablar" | "dejalo ya"){<@game_option "stop">};
+
+$end_game_session = (["mini"] "deja la sesión" ["mini"]| ["mini"] "termina la sesión" ["mini"] | ["mini"] "finaliza la sesión" ["mini"]) {<@game_dialog_option "exit_game_session">};
+
+// #### PROPIO DE MEMORY_GAME ####
+
+$memory_game = (["mini"] "vamos a jugar al juego de memoria" | ["mini"] "al juego de las cartas" | "el de las cartas" | "encontrar las parejas" | "buscar parejas"){<@game_command "memory_game">};
+
+$one = ("uno" | "una" | "la uno" | "la una" | "la primera" ["carta"] | "la carta uno"){<@game_command "one">};
+
+$two = ("dos" | "la dos" | "la segunda" ["carta"] | "la carta dos"){<@game_command "two">};
+
+$three = ("tres" | "la tres" | "la tercera" ["carta"] | "la carta tres"){<@game_command "three">};
+
+$four = ("cuatro" | "la cuatro" | "la cuarta" ["carta"] | "la carta cuatro"){<@game_command "four">};
+
+$five = ("cinco" | "la cinco" | "la quinta" ["carta"] | "la carta cinco"){<@game_command "five">};
+
+$six = ("seis" | "la seis" | "la sexta" ["carta"] | "la carta seis"){<@game_command "six">};
+
+$seven = ("siete" | "la siete" | "la séptima" ["carta"] | "la carta siete"){<@game_command "seven">};
+
+$eight = ("ocho" | "la ocho" | "la octava" ["carta"] | "la carta ocho"){<@game_command "eight">};
+
+$nine = ("nueve" | "la nueve" | "la novena" ["carta"] | "la carta nueve"){<@game_command "nine">};
+
+$ten = ("diez" | "la diez" | "la décima" ["carta"] | "la carta diez"){<@game_command "ten">};
+
+$eleven = ("once" | "la once" | "la undécima" ["carta"] | "la carta once"){<@game_command "eleven">};
+
+$twelve = ("doce" | "la doce" | "la duodécima" ["carta"] | "la carta doce"){<@game_command "twelve">};
+
+$easy_level = ("jugar nivel fácil" | "fácil" | "el" ["más"] "fácil" | "el" ["nivel"] "fácil"){<@game_command "easy_level">};
+
+$medium_level = ("jugar nivel medio" | "medio" | "el medio" | "el" ["nivel"] "medio"){<@game_command "medium_level">};
+
+$hard_level = ("jugar nivel difícil" | "difícil" | "el" ["más"] "difícil" | "el" ["nivel"] "difícil"){<@game_command "hard_level">};
+
+$init_game = ("sí" | "vale" | "juguemos"){<@game_command "init_game">};
+
+$get_hint = (["mini"] "danos una pista" ["mini"] | ["mini"] "dame una pista" ["mini"] | ["mini"] "ayudanos" ["mini"] ){<@game_command "get_hint">};
+

@@ -1,0 +1,39 @@
+#ABNF 1.0 ISO-8859-1;
+
+language es-ES;
+tag-format <loq-semantics/1.0>;
+
+public $root = [$GARBAGE] $user_talking;
+
+$user_talking = ($valencia | $pais_vasco | $leon | $cadiz | $madrid | $baleares | $valladolid | $canarias |
+ $galicia | $murcia | $segovia | $burgos | $cataluna | $malaga);
+
+// #### PROPIO DE MONUMENT_GAME ####
+
+$valencia = ("valencia"){<@game_answer "valencia">};
+
+$pais_vasco = ("pais vasco"){<@game_answer "pais_vasco">};
+
+$leon = ("leon"){<@game_answer "leon">};
+
+$cadiz = ("cadiz"){<@game_answer "cadiz">};
+
+$madrid = ("madrid" | "madriz"){<@game_answer "madrid">};
+
+$baleares = ("baleares"){<@game_answer "baleares">};
+
+$valladolid = ("valladolid" | "valladoliz"){<@game_answer "valladolid">};
+
+$canarias = ("canarias"){<@game_answer "canarias">};
+
+$galicia = ("galicia"){<@game_answer "galicia">};
+
+$murcia = ("murcia"){<@game_answer "murcia">};
+
+$segovia = ("segovia"){<@game_answer "segovia">};
+
+$burgos = ("burgos"){<@game_answer "burgos">};
+
+$cataluna = ("cataluña"){<@game_answer "cataluna">};
+
+$malaga = ("malaga"){<@game_answer "malaga">};
